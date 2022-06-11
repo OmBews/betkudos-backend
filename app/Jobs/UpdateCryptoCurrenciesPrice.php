@@ -79,7 +79,7 @@ class UpdateCryptoCurrenciesPrice implements ShouldQueue
         return Http::get('https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest', [
             'symbol' => implode(',', $symbols),
             'convert' => $fiat,
-            'CMC_PRO_API_KEY' => env('EXCHANGE_KEY', '9edd1d17-67e6-455b-b8e9-0a81b270c9ff')
+            'CMC_PRO_API_KEY' => env('EXCHANGE_KEY', '9edd1d17-67e6-455b-b8e9-0a81b27w0c9ff')
         ]);
     }
 }
