@@ -1,0 +1,67 @@
+Our current database schema is:
+
+users:
+
+- id
+- username
+- ...etc
+
+crypto_currencies:
+
+- id
+- ticker (BTC, USDT)
+- icon
+- max_bet (We can set the max bet/min bet/max profit per crypto)
+- min_bet
+- max_bet_profit
+- places (decimal places)
+
+wallets: (User wallets)
+
+A user could have multiple wallets over different cryptocurrencies
+
+- user_id (The user that owns)
+- crypto_currency_id
+- balance
+
+The balance column represents the sum of all the balance available over all
+wallet addresses, so if the use did 2 deposits of 0.5 BTC over 2 different BTC addresses
+their balance on the BTC wallet should be 1 BTC.
+
+-----------------------------------------------------------
+The new tables What I propose to the full integration:
+
+wallet_addresses:
+
+- user_id
+- crypto_currency_id
+- wallet_id
+- address
+- balance (The balance over all user deposits)
+
+transactions:
+
+- user_id
+- wallet_id
+- type (Deposit/Withdrawal)
+
+deposits:
+
+- user_id
+- wallet_id
+- amount
+- wallet_address_id (Last user generated address for their wallet)
+- txid (transaction id on blockchain)
+- status
+- confirmations
+
+withdrawals:
+
+- user_id
+- wallet_id
+- amount
+- txid (transaction id on blockchain)
+- address (user address to withdraw)
+- status
+- confirmations
+

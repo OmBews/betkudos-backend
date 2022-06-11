@@ -1,0 +1,22 @@
+/node_modules
+/public/hot
+/public/storage
+/storage/*.key
+/vendor
+/.idea
+/.history
+do-database-cert.pem
+do-database-cert.crt
+# .env
+.env.backup
+.phpunit.result.cache
+.rnd
+Homestead.json
+Homestead.yaml
+npm-debug.log
+yarn-error.log
+scheduler.log
+horizon.log
+horizon.log.*
+supervisord.log
+supervisord.pid
